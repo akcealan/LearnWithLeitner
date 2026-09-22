@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Learn with Leitner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="css/app.css"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  :focus-visible {
+    outline: 2px solid #38bdf8 !important;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  @keyframes riseIn {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal {
+    animation: riseIn 0.6s ease both;
+  }
+
+  .reveal-3 {
+    animation-delay: 0.16s;
+  }
+
+  #decks-container > * {
+    animation: riseIn 0.5s ease both;
+  }
+
+  #decks-container > *:nth-child(2) {
+    animation-delay: 0.08s;
+  }
+
+  #decks-container > *:nth-child(3) {
+    animation-delay: 0.16s;
+  }
+
+  #decks-container > *:nth-child(n+4) {
+    animation-delay: 0.24s;
+  }
+  
+  html:not(.dark) {
+    background-color: #f6f7f8 !important;
+    color: #1f2937 !important;
+  }
+  
+  html:not(.dark) body {
+    background-color: #f6f7f8 !important;
+    color: #1f2937 !important;
+  }
+  
+  html:not(.dark) main,
+  html:not(.dark) .bg-background-dark {
+    background-color: #f6f7f8 !important;
+  }
+  
+  html:not(.dark) h1,
+  html:not(.dark) h2,
+  html:not(.dark) h3,
+  html:not(.dark) h4,
+  html:not(.dark) h5,
+  html:not(.dark) h6,
+  html:not(.dark) p,
+  html:not(.dark) span,
+  html:not(.dark) div {
+    color: #1f2937 !important;
+  }
+  
+  html:not(.dark) .text-slate-50,
+  html:not(.dark) .text-slate-100,
+  html:not(.dark) .text-slate-200 {
+    color: #1f2937 !important;
+  }
+  
+  html:not(.dark) .text-slate-300,
+  html:not(.dark) .text-slate-400,
+  html:not(.dark) .text-slate-500 {
+    color: #6b7280 !important;
+  }
+  
+  html:not(.dark) header {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: #e5e7eb !important;
+  }
+  
+  html:not(.dark) .bg-card-dark {
+    background-color: #ffffff !important;
+  }
+  
+  html:not(.dark) .border-border-dark {
+    border-color: #e5e7eb !important;
+  }
+  
+  html:not(.dark) .bg-slate-700 {
+    background-color: #e5e7eb !important;
+    color: #1f2937 !important;
+  }
+  
+  html:not(.dark) .bg-slate-700:hover {
+    background-color: #d1d5db !important;
+  }
+  
+  html:not(.dark) aside {
+    background-color: #f6f7f8 !important;
+    border-color: #e5e7eb !important;
+  }
+  
+  html:not(.dark) input {
+    background-color: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #1f2937 !important;
+  }
+  
+  html:not(.dark) input::placeholder {
+    color: #9ca3af !important;
+  }
+  
+  html:not(.dark) #modal-title {
+    color: #1f2937 !important;
+  }
+  
+  html:not(.dark) #modal-message {
+    color: #6b7280 !important;
+  }
+  
+  html:not(.dark) #modal-cancel {
+    background-color: #e5e7eb !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+  }
+  
+  html:not(.dark) #modal-cancel:hover {
+    background-color: #d1d5db !important;
+  }
+  
+  html:not(.dark) #modal-confirm {
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+  }
+  
+  html:not(.dark) #modal-confirm:hover {
+    background-color: #b91c1c !important;
+  }
+  
+  html:not(.dark) a {
+    color: #38bdf8 !important;
+  }
+</style>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#38bdf8","background-light": "#f6f7f8",
+                        "background-dark": "#111827","card-dark": "#1f2937","border-dark": "#374151"},
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-dark text-slate-100">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-slate-900 focus:font-bold focus:text-sm">Ana içeriğe atla</a>
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<header class="sticky top-0 z-20 flex items-center justify-between border-b border-border-dark bg-background-dark/80 backdrop-blur-sm px-4 sm:px-6 lg:px-10 py-3">
+<div class="flex items-center gap-4 text-primary min-w-0">
+<img data-app-mark="leitner" src="assets/favicon.svg" alt="" width="22" height="22" class="flex-shrink-0"/>
+<h2 class="text-base sm:text-lg font-bold leading-tight tracking-[-0.015em] text-slate-50 truncate">
+Learn with Leitner by <a href="https://github.com/akcealan" target="_blank" class="text-primary hover:underline">akcealan</a>
+</h2>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<a href="statistics.html" aria-label="İstatistikler" class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center p-2 text-slate-300 hover:text-primary hover:bg-slate-700 rounded-full transition-colors" title="İstatistikler">
+<span aria-hidden="true" class="material-symbols-outlined">bar_chart</span>
+</a>
+<a href="settings.html" aria-label="Ayarlar" class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center p-2 text-slate-300 hover:text-primary hover:bg-slate-700 rounded-full transition-colors" title="Ayarlar">
+<span aria-hidden="true" class="material-symbols-outlined">settings</span>
+</a>
+</div>
+</header>
+<main id="main-content" class="flex-1 p-4 sm:p-6 lg:p-10">
+<div class="max-w-5xl mx-auto lp-enter">
+<section aria-labelledby="hero-title" class="relative text-center pt-4 sm:pt-8 pb-2 reveal">
+<div aria-hidden="true" class="pointer-events-none absolute left-1/2 top-0 h-56 w-[36rem] max-w-full -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"></div>
+<div class="relative">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-3">Aralıklı tekrar • 5 kutulu Leitner</p>
+<h1 id="hero-title" class="text-slate-50 text-4xl sm:text-5xl font-black leading-tight tracking-[-0.033em]">Hoşgeldiniz!</h1>
+<p class="text-slate-400 text-base mt-3 max-w-xl mx-auto">Kartlar oluştur, doğru zamanda tekrar et: bildiklerin ileri kutuya ilerler, zorlandıkların daha sık karşına çıkar.</p>
+<div class="flex flex-col sm:flex-row gap-3 mt-6 max-w-xl mx-auto text-left">
+<div class="flex-1">
+<label class="sr-only" for="deck-name-input">Deste adı</label>
+<input type="text" id="deck-name-input" placeholder="Deste adı (örn: Almanca, İngilizce...)" class="w-full h-12 px-4 bg-slate-700 border border-border-dark focus:border-primary focus:outline-none rounded-lg text-slate-100 placeholder:text-slate-400 text-base" />
+</div>
+<button id="create-deck-btn" class="min-w-[120px] min-h-[48px] cursor-pointer inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl h-12 px-6 bg-primary text-slate-900 text-sm font-bold hover:bg-primary/90 active:scale-[0.98] transition">
+<span aria-hidden="true" class="material-symbols-outlined">add_circle</span>
+<span>Yeni Deste</span>
+</button>
+</div>
+<p id="hero-stats" class="text-slate-400 text-sm mt-5">Deste özetin hazırlanıyor…</p>
+<a href="#nasil-calisir" class="inline-block mt-3 text-primary text-sm font-semibold hover:underline">Nasıl çalışır?</a>
+</div>
+</section>
+
+<div class="reveal reveal-3">
+<h2 class="text-slate-50 text-xl font-bold leading-normal mb-4">Destelerim</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="decks-container">
+</div>
+
+<section id="tekrar-takvimi" aria-labelledby="takvim-title" class="mt-12 sm:mt-16">
+<div class="text-center max-w-xl mx-auto">
+<h2 id="takvim-title" class="text-slate-50 text-2xl sm:text-3xl font-black tracking-tight">Tekrar Takvimi</h2>
+<p class="text-slate-400 text-sm mt-2">Destelerindeki yaklaşan ve bekleyen tekrarlar.</p>
+</div>
+<div id="schedule-container" class="mt-6 space-y-4"><!-- JS ile doldurulur --></div>
+</section>
+
+<section id="nasil-calisir" aria-labelledby="nasil-calisir-title" class="mt-12 sm:mt-16">
+<div class="text-center max-w-xl mx-auto">
+<h2 id="nasil-calisir-title" class="text-slate-50 text-2xl sm:text-3xl font-black tracking-tight">Kartların doğru zamanda karşına çıkar</h2>
+<p class="text-slate-400 text-sm mt-2">Zorlandığın kartlar sık, bildiklerin seyrek tekrar edilir. Beş kutu bilgiyi kalıcı hafızaya taşır.</p>
+</div>
+<ol class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mt-6">
+<li class="rounded-xl border border-border-dark bg-card-dark p-4 text-center">
+<p class="text-xs font-bold uppercase tracking-wider text-slate-400">Kutu 1</p>
+<p class="text-slate-50 text-lg font-black mt-1">Her gün</p>
+</li>
+<li class="rounded-xl border border-border-dark bg-card-dark p-4 text-center">
+<p class="text-xs font-bold uppercase tracking-wider text-slate-400">Kutu 2</p>
+<p class="text-slate-50 text-lg font-black mt-1">2 günde bir</p>
+</li>
+<li class="rounded-xl border border-border-dark bg-card-dark p-4 text-center">
+<p class="text-xs font-bold uppercase tracking-wider text-slate-400">Kutu 3</p>
+<p class="text-slate-50 text-lg font-black mt-1">4 günde bir</p>
+</li>
+<li class="rounded-xl border border-border-dark bg-card-dark p-4 text-center">
+<p class="text-xs font-bold uppercase tracking-wider text-slate-400">Kutu 4</p>
+<p class="text-slate-50 text-lg font-black mt-1">7 günde bir</p>
+</li>
+<li class="rounded-xl border border-border-dark bg-card-dark p-4 text-center col-span-2 sm:col-span-1">
+<p class="text-xs font-bold uppercase tracking-wider text-slate-400">Kutu 5</p>
+<p class="text-slate-50 text-lg font-black mt-1">30 günde bir</p>
+</li>
+</ol>
+<p class="text-center text-slate-400 text-sm mt-6">"Bunu Bildim" kartı bir ileri, "Bilemedim" bir geri kutuya alır.</p>
+<details class="mt-4 max-w-2xl mx-auto rounded-xl border border-border-dark bg-card-dark p-4 sm:p-5">
+<summary class="cursor-pointer font-semibold text-slate-100 text-sm">Leitner sistemi nedir?</summary>
+<div class="text-slate-400 text-sm leading-relaxed mt-3 space-y-3">
+<p>Leitner sistemi, aralıklı tekrar ilkesine dayanan bir çalışma yöntemidir: doğru bilinen kartlar daha seyrek, zorlanılan kartlar daha sık tekrar edilir.</p>
+<p>Kartlar beş kutu arasında ilerler; hedef, bilginin uzun süreli hafızaya yerleşmesidir.</p>
+</div>
+</details>
+</section>
+</div>
+</main>
+
+<!-- Confirmation Modal -->
+<div id="confirmation-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-message">
+  <div class="bg-card-dark rounded-xl border border-border-dark shadow-2xl shadow-black/50 w-96 max-w-full max-h-[90vh] overflow-y-auto p-6 animate-in">
+    <h2 id="modal-title" class="text-xl font-bold text-slate-100 mb-2">Onay Gerekli</h2>
+    <p id="modal-message" class="text-slate-400 text-sm mb-6 break-words"></p>
+    <div class="flex gap-3">
+      <button id="modal-cancel" class="flex-1 min-h-[44px] px-4 py-2.5 rounded-lg bg-slate-700 text-slate-100 font-semibold hover:bg-slate-600 transition-colors text-sm">
+        İptal
+      </button>
+      <button id="modal-confirm" class="flex-1 min-h-[44px] px-4 py-2.5 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-700 transition-colors text-sm">
+        Sil
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+<script src="js/storage.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/app.js"></script>
+</html>

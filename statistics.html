@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>İstatistikler - Learn with Leitner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="css/app.css"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#38bdf8",
+            "background-dark": "#111827",
+            "card-dark": "#1f2937",
+            "border-dark": "#374151",
+            "background-light": "#f6f7f8",
+            "card-light": "#ffffff",
+            "border-light": "#e5e7eb"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    :focus-visible {
+      outline: 2px solid #38bdf8 !important;
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    html:not(.dark) {
+      background-color: #f6f7f8 !important;
+      color: #1f2937 !important;
+    }
+    
+    html:not(.dark) body {
+      background-color: #f6f7f8 !important;
+      color: #1f2937 !important;
+    }
+    
+    html:not(.dark) main {
+      background-color: #f6f7f8 !important;
+    }
+    
+    html:not(.dark) h1,
+    html:not(.dark) h2,
+    html:not(.dark) h3,
+    html:not(.dark) p,
+    html:not(.dark) span,
+    html:not(.dark) div {
+      color: #1f2937 !important;
+    }
+    
+    html:not(.dark) .text-slate-50,
+    html:not(.dark) .text-slate-100 {
+      color: #1f2937 !important;
+    }
+    
+    html:not(.dark) .text-slate-400 {
+      color: #6b7280 !important;
+    }
+    
+    html:not(.dark) .text-slate-500 {
+      color: #6b7280 !important;
+    }
+    
+    html:not(.dark) .text-green-400 {
+      color: #059669 !important;
+    }
+    
+    html:not(.dark) .text-yellow-400 {
+      color: #d97706 !important;
+    }
+    
+    html:not(.dark) header {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border-color: #e5e7eb !important;
+    }
+    
+    html:not(.dark) .bg-card-dark {
+      background-color: #ffffff;
+    }
+    
+    html:not(.dark) .border-border-dark {
+      border-color: #e5e7eb;
+    }
+    
+    html:not(.dark) .text-slate-100 {
+      color: #1f2937;
+    }
+    
+    html:not(.dark) .text-slate-300,
+    html:not(.dark) .text-slate-400 {
+      color: #6b7280;
+    }
+    
+    html:not(.dark) .bg-slate-700 {
+      background-color: #e5e7eb;
+      color: #1f2937;
+    }
+    
+    html:not(.dark) .bg-slate-700:hover {
+      background-color: #d1d5db;
+    }
+    
+    html:not(.dark) .bg-green-400 {
+      color: #059669;
+    }
+    
+    html:not(.dark) .bg-yellow-400 {
+      color: #d97706;
+    }
+    
+    html:not(.dark) .bg-primary\/30 {
+      background-color: rgba(56, 189, 248, 0.2);
+    }
+    
+    html:not(.dark) .bg-slate-700\/30 {
+      background-color: rgba(229, 231, 235, 0.5);
+    }
+    
+    html:not(.dark) .text-green-400 {
+      color: #059669;
+    }
+    
+    html:not(.dark) .text-slate-50 {
+      color: #1f2937;
+    }
+    
+    html:not(.dark) .text-yellow-400 {
+      color: #d97706;
+    }
+    
+    html:not(.dark) a {
+      color: #38bdf8;
+    }
+</style>
+</head>
+<body class="font-display bg-background-dark text-slate-100">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-slate-900 focus:font-bold focus:text-sm">Ana içeriğe atla</a>
+<header class="sticky top-0 z-20 flex items-center justify-between border-b border-border-dark bg-background-dark/80 backdrop-blur-sm px-4 sm:px-6 lg:px-10 py-3">
+<div class="flex items-center gap-4 min-w-0">
+<img data-app-mark="leitner" src="assets/favicon.svg" alt="" width="22" height="22" class="flex-shrink-0"/>
+<a href="index.html" aria-label="Geri dön" class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors rounded-full">
+<span aria-hidden="true" class="material-symbols-outlined">arrow_back</span>
+</a>
+<h2 class="text-lg font-bold text-slate-50 truncate">İstatistikler</h2>
+</div>
+</header>
+
+<main id="main-content" class="p-4 sm:p-6 lg:p-10">
+<div class="max-w-6xl mx-auto lp-enter">
+
+<div class="mb-6">
+<h1 class="text-slate-50 text-2xl sm:text-3xl font-black tracking-tight">Genel Bakış</h1>
+<p class="text-slate-400 text-sm mt-1">Verilerine dayalı çalışma özeti</p>
+</div>
+
+<!-- Genel İstatistikler -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+<div class="lp-lift bg-card-dark rounded-2xl border border-border-dark p-6">
+<p class="text-slate-400 text-sm font-medium mb-2">Toplam Kartlar</p>
+<p class="text-3xl font-bold text-slate-100" id="total-cards">0</p>
+</div>
+<div class="lp-lift bg-card-dark rounded-2xl border border-border-dark p-6">
+<p class="text-slate-400 text-sm font-medium mb-2">Master Seviyesi</p>
+<p class="text-3xl font-bold text-green-400" id="box-5-cards">0</p>
+</div>
+<div class="lp-lift bg-card-dark rounded-2xl border border-border-dark p-6">
+<p class="text-slate-400 text-sm font-medium mb-2">Başarı Oranı</p>
+<p class="text-3xl font-bold text-primary" id="success-rate">0%</p>
+</div>
+<div class="lp-lift bg-card-dark rounded-2xl border border-border-dark p-6">
+<p class="text-slate-400 text-sm font-medium mb-2">Çalışılan Kartlar (Bugün)</p>
+<p class="text-3xl font-bold text-yellow-400" id="today-studied">0</p>
+</div>
+</div>
+
+<!-- Kutu Dağılımı -->
+<div class="bg-card-dark rounded-2xl border border-border-dark p-6 mb-8">
+<h3 class="text-xl font-bold text-slate-100 mb-1">Kutu Dağılımı</h3>
+<p class="text-slate-400 text-sm mb-6">Kartların kutulara göre dağılımı</p>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<div class="flex flex-col items-center p-4 bg-slate-700/30 rounded-xl">
+<span class="text-sm text-slate-400 mb-2">📦 Kutu 1</span>
+<p class="text-2xl font-bold text-slate-100" id="box-1-count">0</p>
+<div class="w-full h-1.5 mt-2 rounded-full bg-slate-700">
+<div id="box-1-bar" class="h-full rounded-full bg-primary transition-all" style="width: 0%"></div>
+</div>
+<p class="text-xs text-slate-500 mt-1">1 günde tekrar</p>
+</div>
+<div class="flex flex-col items-center p-4 bg-slate-700/30 rounded-xl">
+<span class="text-sm text-slate-400 mb-2">📦 Kutu 2</span>
+<p class="text-2xl font-bold text-slate-100" id="box-2-count">0</p>
+<div class="w-full h-1.5 mt-2 rounded-full bg-slate-700">
+<div id="box-2-bar" class="h-full rounded-full bg-primary transition-all" style="width: 0%"></div>
+</div>
+<p class="text-xs text-slate-500 mt-1">2 günde tekrar</p>
+</div>
+<div class="flex flex-col items-center p-4 bg-slate-700/30 rounded-xl">
+<span class="text-sm text-slate-400 mb-2">📦 Kutu 3</span>
+<p class="text-2xl font-bold text-slate-100" id="box-3-count">0</p>
+<div class="w-full h-1.5 mt-2 rounded-full bg-slate-700">
+<div id="box-3-bar" class="h-full rounded-full bg-primary transition-all" style="width: 0%"></div>
+</div>
+<p class="text-xs text-slate-500 mt-1">4 günde tekrar</p>
+</div>
+<div class="flex flex-col items-center p-4 bg-slate-700/30 rounded-xl">
+<span class="text-sm text-slate-400 mb-2">📦 Kutu 4</span>
+<p class="text-2xl font-bold text-slate-100" id="box-4-count">0</p>
+<div class="w-full h-1.5 mt-2 rounded-full bg-slate-700">
+<div id="box-4-bar" class="h-full rounded-full bg-primary transition-all" style="width: 0%"></div>
+</div>
+<p class="text-xs text-slate-500 mt-1">7 günde tekrar</p>
+</div>
+<div class="flex flex-col items-center p-4 bg-slate-700/30 rounded-xl col-span-2 md:col-span-1">
+<span class="text-sm text-slate-400 mb-2">📦 Kutu 5</span>
+<p class="text-2xl font-bold text-green-400" id="box-5-count">0</p>
+<div class="w-full h-1.5 mt-2 rounded-full bg-slate-700">
+<div id="box-5-bar" class="h-full rounded-full bg-primary transition-all" style="width: 0%"></div>
+</div>
+<p class="text-xs text-slate-500 mt-1">30 günde tekrar</p>
+</div>
+</div>
+</div>
+
+<!-- Deste Listesi İstatistikleri -->
+<div class="bg-card-dark rounded-2xl border border-border-dark p-6">
+<h3 class="text-xl font-bold text-slate-100 mb-1">Deste İstatistikleri</h3>
+<p class="text-slate-400 text-sm mb-6">Deste başına kutu dağılımı</p>
+<div class="space-y-4" id="deck-stats">
+<!-- Dinamik olarak doldurulacak -->
+</div>
+</div>
+
+</div>
+</main>
+
+</body>
+<script src="js/storage.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/statistics.js"></script>
+</html>

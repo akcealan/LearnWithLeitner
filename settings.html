@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ayarlar - Learn with Leitner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="css/app.css"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#38bdf8",
+            "background-dark": "#111827",
+            "card-dark": "#1f2937",
+            "border-dark": "#374151",
+            "background-light": "#f6f7f8",
+            "card-light": "#ffffff",
+            "border-light": "#e5e7eb"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    :focus-visible {
+      outline: 2px solid #38bdf8 !important;
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    html:not(.dark) {
+      background-color: #f6f7f8 !important;
+      color: #1f2937 !important;
+    }
+    
+    html:not(.dark) body {
+      background-color: #f6f7f8 !important;
+      color: #1f2937 !important;
+    }
+    
+    html:not(.dark) main {
+      background-color: #f6f7f8 !important;
+    }
+    
+    html:not(.dark) h1,
+    html:not(.dark) h2,
+    html:not(.dark) h3,
+    html:not(.dark) p,
+    html:not(.dark) span,
+    html:not(.dark) div {
+      color: #1f2937 !important;
+    }
+    
+    html:not(.dark) .text-slate-50 {
+      color: #1f2937 !important;
+    }
+    
+    html:not(.dark) header {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border-color: #e5e7eb !important;
+    }
+    
+    html:not(.dark) .bg-card-dark {
+      background-color: #ffffff;
+    }
+    
+    html:not(.dark) .border-border-dark {
+      border-color: #e5e7eb;
+    }
+    
+    html:not(.dark) .text-slate-100 {
+      color: #1f2937;
+    }
+    
+    html:not(.dark) .text-slate-300,
+    html:not(.dark) .text-slate-400 {
+      color: #6b7280;
+    }
+    
+    html:not(.dark) .bg-slate-700 {
+      background-color: #e5e7eb;
+      color: #1f2937;
+    }
+    
+    html:not(.dark) .bg-slate-700:hover {
+      background-color: #d1d5db;
+    }
+    
+    html:not(.dark) .bg-red-900\/30 {
+      background-color: rgba(159, 18, 57, 0.1);
+    }
+    
+    html:not(.dark) .bg-red-900\/30:hover {
+      background-color: rgba(159, 18, 57, 0.15);
+    }
+    
+    html:not(.dark) .text-slate-50 {
+      color: #1f2937;
+    }
+    
+    html:not(.dark) .text-red-400 {
+      color: #dc2626;
+    }
+    
+    html:not(.dark) .text-red-600 {
+      background-color: #dc2626;
+    }
+    
+    html:not(.dark) .text-red-600:hover {
+      background-color: #b91c1c;
+    }
+    
+    html:not(.dark) .bg-red-900\/50 {
+      background-color: rgba(159, 18, 57, 0.1);
+    }
+    
+    html:not(.dark) .bg-red-900\/50:hover {
+      background-color: rgba(159, 18, 57, 0.15);
+    }
+    
+    html:not(.dark) .bg-slate-700\/50 {
+      background-color: rgba(229, 231, 235, 0.5);
+    }
+    
+    html:not(.dark) .bg-slate-700\/50:hover {
+      background-color: rgba(203, 213, 225, 0.7);
+    }
+    
+    html:not(.dark) #modal-title {
+      color: #1f2937;
+    }
+    
+    html:not(.dark) #modal-message {
+      color: #6b7280;
+    }
+    
+    html:not(.dark) #modal-cancel {
+      background-color: #e5e7eb;
+      color: #1f2937;
+      border-color: #d1d5db;
+    }
+    
+    html:not(.dark) #modal-cancel:hover {
+      background-color: #d1d5db;
+    }
+    
+    html:not(.dark) #modal-confirm {
+      background-color: #dc2626;
+      color: #ffffff;
+    }
+    
+    html:not(.dark) #modal-confirm:hover {
+      background-color: #b91c1c;
+    }
+    
+    html:not(.dark) a {
+      color: #38bdf8;
+    }
+</style>
+</head>
+<body class="font-display bg-background-dark text-slate-100">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-slate-900 focus:font-bold focus:text-sm">Ana içeriğe atla</a>
+<header class="sticky top-0 z-20 flex items-center justify-between border-b border-border-dark bg-background-dark/80 backdrop-blur-sm px-4 sm:px-6 lg:px-10 py-3">
+<div class="flex items-center gap-4 min-w-0">
+<img data-app-mark="leitner" src="assets/favicon.svg" alt="" width="22" height="22" class="flex-shrink-0"/>
+<a href="index.html" aria-label="Geri dön" class="min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors rounded-full">
+<span aria-hidden="true" class="material-symbols-outlined">arrow_back</span>
+</a>
+<h2 class="text-lg font-bold text-slate-50 truncate">Ayarlar</h2>
+</div>
+</header>
+
+<main id="main-content" class="p-4 sm:p-6 lg:p-10">
+<div class="max-w-2xl mx-auto lp-enter">
+
+<!-- Tema Seçimi -->
+<div class="bg-card-dark rounded-2xl border border-border-dark p-6 mb-6">
+<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+<div>
+<h3 class="text-lg font-bold text-slate-100 mb-1">Tema</h3>
+<p class="text-slate-400 text-sm">Uygulamanın görünümünü değiştir</p>
+</div>
+<div class="flex gap-1 rounded-xl border border-border-dark p-1" role="group" aria-label="Tema seçimi">
+<button id="theme-light" aria-label="Açık tema" class="flex-1 sm:flex-none min-h-[44px] px-4 py-2 rounded-lg bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors flex items-center justify-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-sm">light_mode</span>
+<span class="hidden sm:inline">Açık</span>
+</button>
+<button id="theme-dark" aria-label="Koyu tema" class="flex-1 sm:flex-none min-h-[44px] px-4 py-2 rounded-lg bg-primary text-slate-900 font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-sm">dark_mode</span>
+<span class="hidden sm:inline">Koyu</span>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Veri Yönetimi -->
+<div class="bg-card-dark rounded-2xl border border-border-dark p-6 mb-6">
+<h3 class="text-lg font-bold text-slate-100 mb-1">Verileri Yönet</h3>
+<p class="text-slate-400 text-sm mb-4">Yedek al, geri yükle ya da sıfırla</p>
+
+<!-- Export -->
+<div class="mb-4 pb-4 border-b border-border-dark">
+<button id="export-data-btn" class="w-full min-h-[44px] flex items-center justify-between p-4 bg-slate-700/50 hover:bg-slate-700 rounded-lg transition-colors">
+<div class="flex items-center gap-3">
+<span aria-hidden="true" class="material-symbols-outlined">download</span>
+<div class="text-left">
+<p class="font-semibold text-slate-100">Verileri İndir</p>
+<p class="text-xs text-slate-400">JSON formatında yedek oluştur</p>
+</div>
+</div>
+<span aria-hidden="true" class="material-symbols-outlined text-slate-400">arrow_forward</span>
+</button>
+</div>
+
+<!-- Import -->
+<div class="mb-4 pb-4 border-b border-border-dark">
+<button id="import-data-btn" class="w-full min-h-[44px] flex items-center justify-between p-4 bg-slate-700/50 hover:bg-slate-700 rounded-lg transition-colors">
+<div class="flex items-center gap-3">
+<span aria-hidden="true" class="material-symbols-outlined">upload</span>
+<div class="text-left">
+<p class="font-semibold text-slate-100">Verileri Yükle</p>
+<p class="text-xs text-slate-400">JSON dosyasından verileri geri yükle</p>
+</div>
+</div>
+<span aria-hidden="true" class="material-symbols-outlined text-slate-400">arrow_forward</span>
+</button>
+<input type="file" id="import-file-input" accept=".json" style="display: none;"/>
+</div>
+
+<!-- Reset -->
+<div>
+<button id="reset-data-btn" class="w-full min-h-[44px] flex items-center justify-between p-4 rounded-lg border border-red-900/40 bg-red-900/30 hover:bg-red-900/50 transition-colors">
+<div class="flex items-center gap-3">
+<span aria-hidden="true" class="material-symbols-outlined text-red-400">delete_sweep</span>
+<div class="text-left">
+<p class="font-semibold text-slate-100">Tüm Verileri Sil</p>
+<p class="text-xs text-slate-400">Tüm desteler ve kartlar silinecek (geri alınamaz)</p>
+</div>
+</div>
+<span aria-hidden="true" class="material-symbols-outlined text-red-400">arrow_forward</span>
+</button>
+</div>
+</div>
+
+<!-- Hakkında -->
+<div class="bg-card-dark rounded-2xl border border-border-dark p-6">
+<h3 class="text-lg font-bold text-slate-100 mb-4">Hakkında</h3>
+<p class="text-slate-400 text-sm mb-4">Learn with Leitner - Spaced repetition ile etkili öğrenme</p>
+<p class="text-slate-500 text-xs">Sürüm 1.0.0</p>
+<a href="https://github.com/akcealan/LearnWithLeitner" target="_blank" class="text-primary hover:underline text-sm inline-block mt-2">GitHub'da görüntüle →</a>
+</div>
+
+</div>
+</main>
+
+<!-- Confirmation Modal -->
+<div id="confirmation-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-message">
+  <div class="bg-card-dark rounded-xl border border-border-dark shadow-2xl shadow-black/50 w-96 max-w-full max-h-[90vh] overflow-y-auto p-6">
+    <h2 id="modal-title" class="text-xl font-bold text-slate-100 mb-2">Onay Gerekli</h2>
+    <p id="modal-message" class="text-slate-400 text-sm mb-6 break-words"></p>
+    <div class="flex gap-3">
+      <button id="modal-cancel" class="flex-1 min-h-[44px] px-4 py-2.5 rounded-lg bg-slate-700 text-slate-100 font-semibold hover:bg-slate-600 transition-colors text-sm">
+        İptal
+      </button>
+      <button id="modal-confirm" class="flex-1 min-h-[44px] px-4 py-2.5 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-700 transition-colors text-sm">
+        Sil
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+<script src="js/storage.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/settings.js"></script>
+</html>
