@@ -34,6 +34,8 @@ Kartlarını tek tek eklemek zorunda değilsin. ChatGPT veya benzeri yapay zekâ
 
 ### Nasıl yapılır?
 
+**Önemli:** JSON içe aktarma, mevcut desteleri ve kartları yenileriyle değiştirir. Önce verilerini yedekle. Paylaştığın dosyalarda özel bilgiler bulunmadığından emin ol ve yapay zekânın hazırladığı içeriklerin doğruluğunu kontrol et.
+
 1. [LearnWithLeitner'ı aç](https://akcealan.github.io/LearnWithLeitner/) ve örnek bir deste ile kart oluştur.
 2. **Ayarlar → Verileri İndir** seçeneğinden örnek JSON dosyasını indir.
 3. Dosyayı tercih ettiğin yapay zekâ aracına yükle.
@@ -59,8 +61,6 @@ Kartlarını tek tek eklemek zorunda değilsin. ChatGPT veya benzeri yapay zekâ
 > Sonuçta doğrudan LearnWithLeitner'a yükleyebileceğim, indirilebilir ve geçerli bir JSON dosyası oluştur.
 
 **İpucu:** İstersen kendi ders notlarını, belgelerini veya öğrenmek istediğin kavramları da paylaşabilirsin. Böylece kartlar doğrudan çalıştığın kaynaklara göre hazırlanabilir.
-
-**Önemli:** JSON içe aktarma, mevcut desteleri ve kartları yenileriyle değiştirir. Önce verilerini yedekle. Paylaştığın dosyalarda özel bilgiler bulunmadığından emin ol ve yapay zekânın hazırladığı içeriklerin doğruluğunu kontrol et.
 
 ## Çalıştırma
 
