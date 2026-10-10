@@ -28,6 +28,40 @@ Uygulama **telefon, tarayıcı veya e-posta bildirimi göndermez**. Tekrar bekle
 
 Ana sayfadaki **Tekrar Takvimi** bölümü, kartlarının deste ve kutu bazında ne zaman çalışılabileceğini gösterir: vadesi gelenler, gecikenler ve yaklaşan tekrarlar yerel tarih ve saatle listelenir; aynı kutudaki farklı zamanlar ayrı ayrı görünür. Bölüm yalnızca görüntüler, kutuları ve tarihleri değiştirmez.
 
+## Yapay zekâ ile toplu kart oluşturma
+
+Kartlarını tek tek eklemek zorunda değilsin. ChatGPT veya benzeri yapay zekâ araçlarıyla öğrenmek istediğin herhangi bir konuda, ihtiyaçlarına uygun bilgi kartları hazırlayabilirsin.
+
+### Nasıl yapılır?
+
+1. [LearnWithLeitner'ı aç](https://akcealan.github.io/LearnWithLeitner/) ve örnek bir deste ile kart oluştur.
+2. **Ayarlar → Verileri İndir** seçeneğinden örnek JSON dosyasını indir.
+3. Dosyayı tercih ettiğin yapay zekâ aracına yükle.
+4. Aşağıdaki örnek isteği kullanarak ne öğrenmek istediğini kendi sözlerinle anlat.
+5. Hazırlanan JSON dosyasını indirip **Ayarlar → Verileri Yükle** seçeneğiyle uygulamaya aktar.
+
+### Örnek yapay zekâ isteği
+
+> [LearnWithLeitner](https://akcealan.github.io/LearnWithLeitner/) adlı bilgi kartı uygulamasını kullanarak bir konuyu öğrenmek veya bilgilerimi pekiştirmek istiyorum.
+>
+> Ekte, uygulamadan dışa aktardığım örnek JSON dosyası bulunuyor. Bu dosyanın yapısını inceleyerek uygulamayla uyumlu yeni bir kart paketi hazırla.
+>
+> **Öğrenme hedefim ve ihtiyaçlarım:**
+>
+> [Buraya ne öğrenmek istediğini, mevcut bilgi seviyeni ve özellikle hangi konulara odaklanmak istediğini kendi cümlelerinle anlat.]
+>
+> İhtiyaçlarımı değerlendirerek öğrenmem gereken önemli bilgileri belirle. Kartların kapsamına ve sayısına sen karar ver. Gereksiz tekrarlar veya yalnızca kart sayısını artırmak amacıyla eklenen içerikler olmasın.
+>
+> Sorular anlaşılır, cevaplar doğru ve öğrenmeyi kolaylaştıracak kadar öz olsun. İçeriği gerektiğinde küçük ve anlamlı destelere ayır; uygun kategori etiketleri kullan.
+>
+> Örnek dosyadaki deneme kartlarını yeni pakete dahil etme. Yeni kartların tamamı 1. kutudan başlasın ve henüz çalışılmamış olsun. JSON yapısını, benzersiz kimlikleri ve gerekli veri alanlarını uygulamanın beklediği biçimde hazırla.
+>
+> Sonuçta doğrudan LearnWithLeitner'a yükleyebileceğim, indirilebilir ve geçerli bir JSON dosyası oluştur.
+
+**İpucu:** İstersen kendi ders notlarını, belgelerini veya öğrenmek istediğin kavramları da paylaşabilirsin. Böylece kartlar doğrudan çalıştığın kaynaklara göre hazırlanabilir.
+
+**Önemli:** JSON içe aktarma, mevcut desteleri ve kartları yenileriyle değiştirir. Önce verilerini yedekle. Paylaştığın dosyalarda özel bilgiler bulunmadığından emin ol ve yapay zekânın hazırladığı içeriklerin doğruluğunu kontrol et.
+
 ## Çalıştırma
 
 Projeyi indirip `index.html` dosyasını tarayıcıda açabilir veya klasörü VS Code Live Server gibi bir yerel statik HTTP sunucusuyla çalıştırabilirsin. Derleme, paket yöneticisi, hesap ve uygulama sunucusu gerekmez.
